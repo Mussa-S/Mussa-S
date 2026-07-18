@@ -18,16 +18,17 @@
 
 ## 01 · Identity & Access Management
 
-| Project | Proves to a Recruiter | Stack | Status |
-| --- | --- | --- | --- |
-| **Okta SAML Integration** | Understands trust/certs, can debug real auth failures — not just click a wizard | Okta · SAML | ![Queued](https://img.shields.io/badge/Queued-888888?style=flat-square) |
-| **RBAC with Okta** | Designs least-privilege access structures, not ad-hoc permissions | Okta · AD | ![Queued](https://img.shields.io/badge/Queued-888888?style=flat-square) |
-| **Entra ID + AD Hybrid Config** | Can configure enterprise-scale identity, Conditional Access, writes runbooks | Entra ID · AD · Conditional Access | ![Queued](https://img.shields.io/badge/Queued-888888?style=flat-square) |
-| **Automated JML (Cert-Based Auth)** | Real scripting skill — OAuth2, JWT, RSA signing, not GUI-only | PowerShell · OAuth 2.0 · JWT · RSA | ![Queued](https://img.shields.io/badge/Queued-888888?style=flat-square) |
-| **Access Reviews / Audit** | Understands governance, compliance reporting, IGA concepts | Entra ID · Access Reviews · Audit Logs | ![Queued](https://img.shields.io/badge/Queued-888888?style=flat-square) |
-| **Ping Identity Federation** | Not locked into one vendor — federation concepts transfer | Ping Identity · SAML/OIDC | ![Queued](https://img.shields.io/badge/Queued-888888?style=flat-square) |
+| Workflow Project | Proof | Purpose | Stack | Status |
+| --- | --- | --- | --- | --- |
+| [**SaaS App Integration w/ Okta (SAML)**](https://github.com/Mussa-S/App_Integration_SAML_2.0) | Video & Screenshots Included | This lab serves as a pre-requisite step before all proceeding labs. | Okta · SAML | ![Queued](https://img.shields.io/badge/Queued-888888?style=flat-square) |
+| [**Implementing (RBAC) W/ Okta**](https://github.com/Mussa-S/RBAC-W-AD-Okta) | Video & Screenshots Included | This lab demonstrates well designed RBAC. | AD · Okta · SAML | ![Queued](https://img.shields.io/badge/Queued-888888?style=flat-square) |
+| [**Automated JML W/ Cert-Based AuthN**](https://github.com/Mussa-S/jml-automation-lab) | Video & Screenshots Included | This lab automates the JML lifecycle between Active Directory and Okta using RSA-signed JWTs for secure API communication. | AD · Okta · PowerShell · OAuth 2.0 · RSA · JWT | ![Queued](https://img.shields.io/badge/Queued-888888?style=flat-square) |
+| [**Entra ID & AD Configuration**](https://github.com/Mussa-S/Entra-ID_AD_Prod-Environment) | Screenshots Only | Configure a hybrid environment from scratch and create Operational Runbooks for common issues. Includes CA Policies, applications, OIDC + PKCE and SAML 2.0 authentication protocols. | Active Directory · Entra ID · Entra Connect · Conditional Access · MFA | ![Queued](https://img.shields.io/badge/Queued-888888?style=flat-square) |
+| **SSO & SCIM Automation: SaaS Pro/Deprovisioning** | | Integrating SaaS applications with SSO and automating user provisioning and deprovisioning to maintain consistent identity lifecycle across systems. | Entra ID · Okta · SAML · OIDC · SCIM | ![Queued](https://img.shields.io/badge/Queued-888888?style=flat-square) |
+| **Access Reviews: Certification and Audit Workflow** | | Simulate periodic access reviews where permissions are approved or revoked, with audit logs generated for compliance and governance. | Entra ID · Access Reviews · Audit Logs · CSV | ![Queued](https://img.shields.io/badge/Queued-888888?style=flat-square) |
+| **Privileged Access: Just-in-time Role Elevation (PIM)** | | Implement a workflow for requesting and granting temporary elevated access with approval and automatic expiration. | Entra ID · PIM · Approval Workflow · JIT | ![Queued](https://img.shields.io/badge/Queued-888888?style=flat-square) |
 
-> **Focus area:** Managing identity across hybrid and multi-vendor environments — provisioning, access governance, and federation, with scripting to automate lifecycle stages and reduce manual overhead.
+> **Focus area:** Managing identity across hybrid environments — bridging on-premises Active Directory and cloud platforms like Okta and Microsoft Entra ID. Projects cover the full IAM lifecycle: provisioning, access reviews, privileged access, and offboarding, with PowerShell automation at each stage.
 
 ---
 
@@ -35,32 +36,34 @@
 
 ### Help Desk (osTicket)
 
-| Project | Proves to a Recruiter | Status |
-| --- | --- | --- |
-| [**Prerequisites & Installation**](https://github.com/Mussa-S/osticket-prereqs) | Can set up and configure a real ticketing system from scratch | ![Queued](https://img.shields.io/badge/Queued-888888?style=flat-square) |
-| [**Post-Installation Configuration**](https://github.com/Mussa-S/post-install-config) | Understands SLAs, agent roles, and ticket routing — real help desk ops | ![Queued](https://img.shields.io/badge/Queued-888888?style=flat-square) |
-| [**Ticket Lifecycle & SLAs**](https://github.com/Mussa-S/ticket-lifecycle) | Can manage ticket intake to resolution with proper escalation | ![Queued](https://img.shields.io/badge/Queued-888888?style=flat-square) |
+| Project | Notes |
+| --- | --- |
+| [Prerequisites & Installation](https://github.com/Mussa-S/osticket-prereqs) | ▶ Video included |
+| [Post-Installation Configuration](https://github.com/Mussa-S/post-install-config) | ▶ Video included |
+| [Ticket Lifecycle & SLAs](https://github.com/Mussa-S/ticket-lifecycle) | ▶ Video included |
+
+### Microsoft Azure / Active Directory
+
+| Project | Notes |
+| --- | --- |
+| [Configuring On-Premises Active Directory within Azure VMs](https://github.com/Mussa-S/configure-ad) | ▶ Video included |
+| [Network Security Groups (NSGs) & Network Protocol Analysis](https://github.com/Mussa-S/azure-network-protocols) | Wireshark |
+| [Basic DNS Configuration & Testing](https://github.com/Mussa-S/dns-config) | Azure |
 
 ---
 
-## 03 · Governance & Compliance
+## 03 · Security Projects
 
-| Project | Proves to a Recruiter | Status |
-| --- | --- | --- |
-| **Compliance Framework Mapping** | Speaks the language of ISO 27001/NIST that auditors and managers use | ![Queued](https://img.shields.io/badge/Queued-888888?style=flat-square) |
-| **Internal Security Audit** | Can assess risk, document findings, and propose mitigations professionally | ![Queued](https://img.shields.io/badge/Queued-888888?style=flat-square) |
-
----
-
-## 04 · Capstone
-
-| Project | Proves to a Recruiter | Status |
-| --- | --- | --- |
-| **AI Risk Scoring Engine** | Builds automation/tooling, not just operates someone else's tooling — your differentiator | ![Queued](https://img.shields.io/badge/Queued-888888?style=flat-square) |
+| Project | Focus |
+| --- | --- |
+| [Internal Security Audit](https://github.com/Mussa-S/Security-Audit) | Risk assessment · audit evidence · mitigation |
+| [Python Algorithm — User Access Management](https://github.com/Mussa-S/python-user-access-management) | Scripted RBAC logic |
+| [SQL Security Investigation — Login & Machine Access Patterns](https://github.com/Mussa-S/sql-investigation) | Threat analysis · access logs |
+| [Linux — Enforcing Least Privilege via File Permissions](https://github.com/Mussa-S/linux-file-permissions) | Hardening · principle of least privilege |
 
 ---
 
-## 05 · Certifications
+## 04 · Certifications
 
 **Earned**
 
