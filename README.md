@@ -18,14 +18,14 @@
 
 ## 01 · Identity & Access Management
 
-| Project | Proves to a Recruiter | Stack | Est. Time | Status |
-| --- | --- | --- | --- | --- |
-| **Okta SAML Integration** | Understands trust/certs, can debug real auth failures — not just click a wizard | Okta · SAML | 2-3 days | ![Queued](https://img.shields.io/badge/Queued-888888?style=flat-square) |
-| **RBAC with Okta** | Designs least-privilege access structures, not ad-hoc permissions | Okta · AD | 3-4 days | ![Queued](https://img.shields.io/badge/Queued-888888?style=flat-square) |
-| **Entra ID + AD Hybrid Config** | Can configure enterprise-scale identity, Conditional Access, writes runbooks | Entra ID · AD · Conditional Access | 5-6 days | ![Queued](https://img.shields.io/badge/Queued-888888?style=flat-square) |
-| **Automated JML (Cert-Based Auth)** | Real scripting skill — OAuth2, JWT, RSA signing, not GUI-only | PowerShell · OAuth 2.0 · JWT · RSA | 5-6 days | ![Queued](https://img.shields.io/badge/Queued-888888?style=flat-square) |
-| **Access Reviews / Audit** | Understands governance, compliance reporting, IGA concepts | Entra ID · Access Reviews · Audit Logs | 2-3 days | ![Queued](https://img.shields.io/badge/Queued-888888?style=flat-square) |
-| **Ping Identity Federation** | Not locked into one vendor — federation concepts transfer | Ping Identity · SAML/OIDC | 4-5 days | ![Queued](https://img.shields.io/badge/Queued-888888?style=flat-square) |
+| Project | Proves to a Recruiter | Stack | Status |
+| --- | --- | --- | --- |
+| **Okta SAML Integration** | Understands trust/certs, can debug real auth failures — not just click a wizard | Okta · SAML | ![Queued](https://img.shields.io/badge/Queued-888888?style=flat-square) |
+| **RBAC with Okta** | Designs least-privilege access structures, not ad-hoc permissions | Okta · AD | ![Queued](https://img.shields.io/badge/Queued-888888?style=flat-square) |
+| **Entra ID + AD Hybrid Config** | Can configure enterprise-scale identity, Conditional Access, writes runbooks | Entra ID · AD · Conditional Access | ![Queued](https://img.shields.io/badge/Queued-888888?style=flat-square) |
+| **Automated JML (Cert-Based Auth)** | Real scripting skill — OAuth2, JWT, RSA signing, not GUI-only | PowerShell · OAuth 2.0 · JWT · RSA | ![Queued](https://img.shields.io/badge/Queued-888888?style=flat-square) |
+| **Access Reviews / Audit** | Understands governance, compliance reporting, IGA concepts | Entra ID · Access Reviews · Audit Logs | ![Queued](https://img.shields.io/badge/Queued-888888?style=flat-square) |
+| **Ping Identity Federation** | Not locked into one vendor — federation concepts transfer | Ping Identity · SAML/OIDC | ![Queued](https://img.shields.io/badge/Queued-888888?style=flat-square) |
 
 > **Focus area:** Managing identity across hybrid and multi-vendor environments — provisioning, access governance, and federation, with scripting to automate lifecycle stages and reduce manual overhead.
 
@@ -35,28 +35,28 @@
 
 ### Help Desk (osTicket)
 
-| Project | Proves to a Recruiter | Est. Time | Status |
-| --- | --- | --- | --- |
-| [**Prerequisites & Installation**](https://github.com/Mussa-S/osticket-prereqs) | Can set up and configure a real ticketing system from scratch | 1 day | ![Queued](https://img.shields.io/badge/Queued-888888?style=flat-square) |
-| [**Post-Installation Configuration**](https://github.com/Mussa-S/post-install-config) | Understands SLAs, agent roles, and ticket routing — real help desk ops | 1 day | ![Queued](https://img.shields.io/badge/Queued-888888?style=flat-square) |
-| [**Ticket Lifecycle & SLAs**](https://github.com/Mussa-S/ticket-lifecycle) | Can manage ticket intake to resolution with proper escalation | 1 day | ![Queued](https://img.shields.io/badge/Queued-888888?style=flat-square) |
+| Project | Proves to a Recruiter | Status |
+| --- | --- | --- |
+| [**Prerequisites & Installation**](https://github.com/Mussa-S/osticket-prereqs) | Can set up and configure a real ticketing system from scratch | ![Queued](https://img.shields.io/badge/Queued-888888?style=flat-square) |
+| [**Post-Installation Configuration**](https://github.com/Mussa-S/post-install-config) | Understands SLAs, agent roles, and ticket routing — real help desk ops | ![Queued](https://img.shields.io/badge/Queued-888888?style=flat-square) |
+| [**Ticket Lifecycle & SLAs**](https://github.com/Mussa-S/ticket-lifecycle) | Can manage ticket intake to resolution with proper escalation | ![Queued](https://img.shields.io/badge/Queued-888888?style=flat-square) |
 
 ---
 
 ## 03 · Governance & Compliance
 
-| Project | Proves to a Recruiter | Est. Time | Status |
-| --- | --- | --- | --- |
-| **Compliance Framework Mapping** | Speaks the language of ISO 27001/NIST that auditors and managers use | 2-3 days | ![Queued](https://img.shields.io/badge/Queued-888888?style=flat-square) |
-| **Internal Security Audit** | Can assess risk, document findings, and propose mitigations professionally | 2-3 days | ![Queued](https://img.shields.io/badge/Queued-888888?style=flat-square) |
+| Project | Proves to a Recruiter | Status |
+| --- | --- | --- |
+| **Compliance Framework Mapping** | Speaks the language of ISO 27001/NIST that auditors and managers use | ![Queued](https://img.shields.io/badge/Queued-888888?style=flat-square) |
+| **Internal Security Audit** | Can assess risk, document findings, and propose mitigations professionally | ![Queued](https://img.shields.io/badge/Queued-888888?style=flat-square) |
 
 ---
 
 ## 04 · Capstone
 
-| Project | Proves to a Recruiter | Est. Time | Status |
-| --- | --- | --- | --- |
-| **AI Risk Scoring Engine** | Builds automation/tooling, not just operates someone else's tooling — your differentiator | TBD | ![Queued](https://img.shields.io/badge/Queued-888888?style=flat-square) |
+| Project | Proves to a Recruiter | Status |
+| --- | --- | --- |
+| **AI Risk Scoring Engine** | Builds automation/tooling, not just operates someone else's tooling — your differentiator | ![Queued](https://img.shields.io/badge/Queued-888888?style=flat-square) |
 
 ---
 
