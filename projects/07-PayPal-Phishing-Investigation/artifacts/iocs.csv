@@ -1,0 +1,9 @@
+type,value,context
+Display Name,*P.A.Y.P.A.L*,Brand impersonation
+Email Sender,IHKH0MFEWW@kodehexa.net,Visible From address
+Return-Path,bounce@rjttznyzjjzydnillquh.designclub.uk.com,SMTP envelope sender
+Sending Host,foresthillrestaurant.com,External Received hop
+IP Address,134.195.196.43,Mail-sending infrastructure; weak VT reputation
+URL,https://storage.googleapis.com/hqyoqzatqthj/aemmfcylvxeo.html,Exact phishing page
+Domain,storage.googleapis.com,Shared cloud hosting used by phishing page
+IP Address,34.144.170.27,Hosting IP observed in VirusTotal; shared Google infrastructure
