@@ -1,0 +1,58 @@
+name: Import portfolio screenshot assets
+
+on:
+  push:
+    paths:
+      - "imports/portfolio-assets/**"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  import-assets:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Install screenshot assets
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          declare -A targets=(
+            ["01.zip"]="projects/01-Splunk-Windows-Authentication/screenshots"
+            ["03.zip"]="projects/03-SOC104-Malware-Investigation/screenshots"
+            ["04.zip"]="projects/04-SOC145-Ransomware-Investigation/screenshots"
+            ["05.zip"]="projects/05-SOC141-Phishing-URL-Investigation/screenshots"
+            ["06.zip"]="projects/06-SOC140-Phishing-Attachment-Investigation/screenshots"
+            ["07.zip"]="projects/07-PayPal-Phishing-Investigation/screenshots"
+            ["08.zip"]="projects/08-Wireshark-Network-Traffic-Investigation/screenshots"
+          )
+
+          for archive in "${!targets[@]}"; do
+            src="imports/portfolio-assets/$archive"
+            dest="${targets[$archive]}"
+            if [[ -f "$src" ]]; then
+              mkdir -p "$dest"
+              rm -f "$dest/evidence-01.webp"
+              unzip -o "$src" -d "$dest"
+            fi
+          done
+
+          rm -rf imports/portfolio-assets
+
+      - name: Commit imported screenshots
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No screenshot changes to commit."
+            exit 0
+          fi
+          git commit -m "Restore full-resolution portfolio screenshots [skip ci]"
+          git push
