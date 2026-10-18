@@ -1,0 +1,11 @@
+SOC140 - Phishing Mail Detected - Suspicious Task Scheduler was triggered for an email sent from aaronluo@cmail.carleton.ca to mark@letsdefend.io with the subject COVID19 Vaccine.
+
+The alert showed Device Action as Blocked, so the message was treated as not delivered to the user. Email Security confirmed the message contained a password-protected attachment. The attachment MD5 72c812cf21909a48eb9ccceb9e04b865d was validated in VirusTotal and exactly matched Material.pdf, which was flagged as malicious by 31/62 security vendors and categorized as phishing/trojan/downloader activity.
+
+VirusTotal behavior showed malicious capabilities including client exploitation, persistence, process injection, credential access, command-and-control and destructive behavior. However, Scheduled Task/Job (T1053) was not independently confirmed in the available sandbox mappings.
+
+MarkPRD endpoint and centralized log data did not provide timestamped evidence showing that the PDF executed, created a scheduled task or generated related network activity around the alert time. Unrelated activity on the same host was excluded where timestamps did not match the SOC140 incident.
+
+Scope checks showed the same sender and subject combination was only observed targeting mark@letsdefend.io.
+
+Final assessment: True Positive phishing email containing a confirmed malicious PDF attachment. The message was blocked before delivery, with no confirmed evidence of endpoint execution or compromise from the available telemetry.
