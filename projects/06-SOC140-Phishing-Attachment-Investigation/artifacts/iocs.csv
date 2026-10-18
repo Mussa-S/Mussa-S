@@ -1,0 +1,10 @@
+type,value,context
+email_sender,aaronluo@cmail.carleton.ca,SOC140 phishing sender
+email_domain,cmail.carleton.ca,Sender domain
+smtp_ip,189.162.189.159,SMTP/source IP from alert
+recipient,mark@letsdefend.io,Targeted mailbox
+subject,COVID19 Vaccine,Observed phishing subject
+md5,72c812cf21909a48eb9ccceb9e04b865d,Malicious PDF attachment
+sha1,2dc265f23be4cf7cda328bdf5826601cf4f4bf43,VirusTotal sample hash
+sha256,39fb927c32221134a423760c5d1f58bca4cbbcc87c891c79e390a22b63608eb4,VirusTotal sample hash
+filename,Material.pdf,VirusTotal sample name
