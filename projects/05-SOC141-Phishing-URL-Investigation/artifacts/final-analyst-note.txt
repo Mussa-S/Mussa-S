@@ -1,0 +1,11 @@
+SOC141 - Phishing URL Detected was triggered after user Ellie on EmilyComp (172.16.17.49) accessed http://mogagrocol.ru/wp-content/plugins/akismet/fv/index.php?email=ellie@letsdefend.io.
+
+The request was allowed and the destination domain mogagrocol.ru was independently validated in VirusTotal, where multiple security vendors classified it as phishing/malicious.
+
+Log Management confirmed a firewall connection from 172.16.17.49 to 91.189.114.8:80 followed by a proxy GET request to the phishing URL. No POST request, additional payload download, or follow-on communication to the same domain/IP was identified.
+
+Email Security did not contain a matching phishing email around the alert time, so the delivery vector could not be confirmed. Endpoint review showed older suspicious rundll32.exe activity, but the timestamp was from a separate February event and was not attributed to this March phishing incident.
+
+Scope checks found no other internal hosts accessing the phishing IP or domain. Based on available evidence, this is assessed as a True Positive phishing URL access event with no confirmed credential submission or malware execution.
+
+EmilyComp was contained as required by the playbook.
