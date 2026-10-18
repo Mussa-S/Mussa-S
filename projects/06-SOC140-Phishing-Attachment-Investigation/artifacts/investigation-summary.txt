@@ -1,0 +1,12 @@
+SOC140 INVESTIGATION SUMMARY
+
+Alert -> phishing email to mark@letsdefend.io, Device Action Blocked
+Email -> urgent COVID19 theme, password-protected attachment
+Hash -> MD5 72c812cf21909a48eb9ccceb9e04b865d
+VirusTotal -> exact Material.pdf match, 31/62 malicious
+Behavior -> execution/persistence/C2 capability present in sandbox data
+Task Scheduler -> not independently confirmed; no T1053 evidence in available data
+Endpoint -> no time-correlated execution evidence for this incident
+Network -> no relevant time-correlated MarkPRD activity found
+Scope -> one exact sender + subject email observed
+Verdict -> TRUE POSITIVE, blocked before delivery, no confirmed endpoint compromise
