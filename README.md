@@ -74,11 +74,11 @@
 
 ## 04 · Certifications
 
-### In Progress
+**In Progress**
 
-![OSCP](https://img.shields.io/badge/OSCP-Offensive_Security_Certified_Professional-In_Progress-e3a008?style=flat-square)
+![OSCP](https://img.shields.io/badge/OSCP-In_Progress-e3a008?style=flat-square)
 
-![SC-200](https://img.shields.io/badge/SC--200-Microsoft_Security_Operations_Analyst-In_Progress-e3a008?style=flat-square&logo=microsoft&logoColor=white)
+![SC-200](https://img.shields.io/badge/SC--200_Microsoft_Security_Operations_Analyst-In_Progress-e3a008?style=flat-square&logo=microsoft&logoColor=white)
 
 ---
 
