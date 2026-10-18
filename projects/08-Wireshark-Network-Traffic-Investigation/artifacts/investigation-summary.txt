@@ -1,0 +1,20 @@
+Wireshark SOC Network Traffic Investigation — Summary
+
+Client: 192.168.124.6
+Server: 192.168.124.7:8080
+Capture: SOC3.pcapng
+Packets in capture: 296
+
+Key findings:
+- Multiple HTTP GET requests were observed.
+- localimage.jpg returned HTTP 404, proving request without successful resource retrieval.
+- A large HTTP POST to /tcp-lab/upload-post contained Content-Length: 307200.
+- The POST was carried across many TCP payload segments and acknowledged by the server.
+- Server returned HTTP 200 OK and TCP closed normally with FIN/ACK.
+- TCP Conversations showed Stream 3 at ~324 kB total, ~322 kB client-to-server, far larger than other ~1 kB streams.
+- No clear TCP receive-window/performance issue was observed.
+- Red/blue Follow Stream colours were treated as directions, not fixed client/server roles.
+- Relative sequence numbers were distinguished from raw sequence numbers; repeated raw initial sequence numbers across separate connections would be unusual, while repeated relative values are normal.
+
+Assessment:
+Substantial client-to-server data transfer was confirmed, but the PCAP alone does not establish malicious activity. In a real SOC, escalation would depend on whether the upload was expected, sensitive, or sent to untrusted infrastructure.
