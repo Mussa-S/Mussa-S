@@ -1,0 +1,7 @@
+type,value,assessment
+URL,"http://mogagrocol.ru/wp-content/plugins/akismet/fv/index.php?email=ellie@letsdefend.io","Confirmed phishing URL accessed"
+Domain,mogagrocol.ru,"Flagged phishing/malicious by multiple VirusTotal vendors"
+Destination IP,91.189.114.8,"External infrastructure contacted by EmilyComp"
+Internal IP,172.16.17.49,"Affected endpoint"
+Hostname,EmilyComp,"Affected endpoint"
+User,ellie,"User associated with alert"
