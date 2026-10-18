@@ -24,11 +24,11 @@
 
 ## 01 · Security Operations & SOC
 
-### 🆕 Latest
+### 🚀 Next Challenge
 
 | Workflow Project | Proof | Purpose | Stack | Status |
 |---|---|---|---|---|
-| **Private AI SOC Jarvis** | Architecture & build evidence in progress | Building a private AI-powered SOC assistant that can ingest Wazuh/SIEM alerts, investigate endpoint and network telemetry, enrich IOCs, map MITRE ATT&CK, maintain incident memory, explain findings, and support detection engineering with human approval for response actions. | Python · Wazuh · Local LLM · APIs · JSON · SQLite · MITRE ATT&CK · Docker | ![In Progress](https://img.shields.io/badge/In_Progress-e3a008?style=flat-square) |
+| **Private AI SOC Jarvis** | Architecture & roadmap planned | Planned private AI-powered SOC assistant that will ingest Wazuh/SIEM alerts, investigate endpoint and network telemetry, enrich IOCs, map MITRE ATT&CK, maintain incident memory, explain findings, and support detection engineering with human approval for response actions. | Python · Wazuh · Local LLM · APIs · JSON · SQLite · MITRE ATT&CK · Docker | ![Next Challenge](https://img.shields.io/badge/Next_Challenge-6f42c1?style=flat-square) |
 
 ### Completed
 
@@ -66,7 +66,7 @@
 |---|---|---|
 | **OSINT Investigation Project** | Public-source intelligence collection, source validation, pivoting, timeline building, evidence handling, and reporting within a safe/ethical investigation scenario. | ![In Progress](https://img.shields.io/badge/In_Progress-e3a008?style=flat-square) |
 | **Python Security Automation / Coding Project** | Build practical Python tooling for APIs, JSON parsing, IOC extraction, alert processing, log enrichment, automation, and SOC workflows. | ![In Progress](https://img.shields.io/badge/In_Progress-e3a008?style=flat-square) |
-| **Private AI SOC Jarvis** | AI-assisted alert investigation, Wazuh integration, local AI, incident memory, threat enrichment, voice interaction, and detection engineering. | ![In Progress](https://img.shields.io/badge/In_Progress-e3a008?style=flat-square) |
+| **Private AI SOC Jarvis** | Planned AI-assisted alert investigation platform with Wazuh integration, local AI, incident memory, threat enrichment, voice interaction, and detection engineering. | ![Next Challenge](https://img.shields.io/badge/Next_Challenge-6f42c1?style=flat-square) |
 | **AI-Assisted AppSec Pipeline** | Future module combining Git/CI/CD, SAST, SCA, DAST, AI triage, remediation validation, and detection creation. | ![Queued](https://img.shields.io/badge/Queued-888888?style=flat-square) |
 | **Enterprise IAM & Zero Trust Lab** | Secondary project covering Entra ID, MFA, Conditional Access, RBAC, identity lifecycle, SSO, and identity monitoring. | ![Queued](https://img.shields.io/badge/Queued-888888?style=flat-square) |
 
