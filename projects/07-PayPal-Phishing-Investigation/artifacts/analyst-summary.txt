@@ -1,0 +1,10 @@
+Phishing Email Challenge - Analyst Summary
+
+Verdict: Phishing - PayPal brand impersonation
+Confidence: High
+
+The message visually impersonated PayPal, but the actual sender was IHKH0MFEWW@kodehexa.net. Raw header analysis showed an unrelated Return-Path under designclub.uk.com, a sending host of foresthillrestaurant.com, and sending IP 134.195.196.43. SPF passed only for the unrelated envelope sender domain and therefore did not authenticate the PayPal brand claim.
+
+The real link was extracted safely from the raw HTML using href= rather than by clicking it. It pointed to a Google Cloud Storage HTML object rather than PayPal infrastructure. The exact hosted page was flagged by 10/92 VirusTotal vendors as phishing/malicious. The sender IP had only 1/90 negative detections and was treated as weak supporting evidence rather than proof.
+
+The final verdict was based on correlation across sender identity, delivery infrastructure, authentication context and exact URL reputation.
