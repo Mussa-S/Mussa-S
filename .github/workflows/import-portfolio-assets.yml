@@ -12,47 +12,49 @@ permissions:
 jobs:
   import-assets:
     runs-on: ubuntu-latest
+
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
 
-      - name: Install screenshot assets
+      - name: Validate and install portfolio screenshots
         shell: bash
         run: |
           set -euo pipefail
 
-          declare -A targets=(
-            ["01.zip"]="projects/01-Splunk-Windows-Authentication/screenshots"
-            ["03.zip"]="projects/03-SOC104-Malware-Investigation/screenshots"
-            ["04.zip"]="projects/04-SOC145-Ransomware-Investigation/screenshots"
-            ["05.zip"]="projects/05-SOC141-Phishing-URL-Investigation/screenshots"
-            ["06.zip"]="projects/06-SOC140-Phishing-Attachment-Investigation/screenshots"
-            ["07.zip"]="projects/07-PayPal-Phishing-Investigation/screenshots"
-            ["08.zip"]="projects/08-Wireshark-Network-Traffic-Investigation/screenshots"
-          )
+          archive="imports/portfolio-assets/portfolio-assets.zip"
 
-          for archive in "${!targets[@]}"; do
-            src="imports/portfolio-assets/$archive"
-            dest="${targets[$archive]}"
-            if [[ -f "$src" ]]; then
-              mkdir -p "$dest"
-              rm -f "$dest/evidence-01.webp"
-              unzip -o "$src" -d "$dest"
-            fi
+          if [[ ! -f "$archive" ]]; then
+            echo "Expected $archive"
+            exit 1
+          fi
+
+          png_count="$(unzip -Z1 "$archive" | grep -E '^projects/[0-9]{2}-[^/]+/screenshots/[^/]+\.png$' | wc -l | tr -d ' ')"
+
+          if [[ "$png_count" != "54" ]]; then
+            echo "Expected 54 portfolio screenshots, found $png_count"
+            exit 1
+          fi
+
+          for project in projects/01-Splunk-Windows-Authentication                          projects/02-Web-Attack-Investigation                          projects/03-SOC104-Malware-Investigation                          projects/04-SOC145-Ransomware-Investigation                          projects/05-SOC141-Phishing-URL-Investigation                          projects/06-SOC140-Phishing-Attachment-Investigation                          projects/07-PayPal-Phishing-Investigation                          projects/08-Wireshark-Network-Traffic-Investigation; do
+            rm -f "$project/screenshots/evidence-01.webp"
           done
 
+          unzip -o "$archive" -d .
           rm -rf imports/portfolio-assets
 
-      - name: Commit imported screenshots
+      - name: Commit restored screenshots
         shell: bash
         run: |
           set -euo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add -A
+
           if git diff --cached --quiet; then
             echo "No screenshot changes to commit."
             exit 0
           fi
-          git commit -m "Restore full-resolution portfolio screenshots [skip ci]"
+
+          git commit -m "Restore original portfolio screenshots [skip ci]"
           git push
