@@ -3,7 +3,7 @@ name: Import portfolio screenshot assets
 on:
   push:
     paths:
-      - "imports/portfolio-assets/**"
+      - "imports/portfolio-assets/_READY"
   workflow_dispatch:
 
 permissions:
@@ -22,7 +22,9 @@ jobs:
         run: |
           set -euo pipefail
 
-          archive="imports/portfolio-assets/portfolio-assets-webp.zip"
+          archive="/tmp/portfolio-assets-webp.zip"
+          cat imports/portfolio-assets/parts/chunk-* > /tmp/portfolio-assets.b64
+          python3 -c "import base64; open('/tmp/portfolio-assets-webp.zip','wb').write(base64.b64decode(open('/tmp/portfolio-assets.b64','rb').read()))"
 
           if [[ ! -f "$archive" ]]; then
             echo "Expected $archive"
