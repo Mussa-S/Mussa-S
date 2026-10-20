@@ -3,7 +3,7 @@ name: Import portfolio screenshot assets
 on:
   push:
     paths:
-      - "imports/portfolio-assets/portfolio-assets.zip"
+      - "imports/portfolio-assets/_READY"
   workflow_dispatch:
 
 permissions:
@@ -22,14 +22,16 @@ jobs:
         run: |
           set -euo pipefail
 
-          archive="imports/portfolio-assets/portfolio-assets.zip"
+          archive="/tmp/portfolio-assets-webp.zip"
+          cat imports/portfolio-assets/parts/chunk-* > /tmp/portfolio-assets.b64
+          python3 -c "import base64; open('/tmp/portfolio-assets-webp.zip','wb').write(base64.b64decode(open('/tmp/portfolio-assets.b64','rb').read()))"
 
           if [[ ! -f "$archive" ]]; then
             echo "Expected $archive"
             exit 1
           fi
 
-          png_count="$(unzip -Z1 "$archive" | grep -E '^projects/[0-9]{2}-[^/]+/screenshots/[^/]+\.png$' | wc -l | tr -d ' ')"
+          png_count="$(unzip -Z1 "$archive" | grep -E '^projects/[0-9]{2}-[^/]+/screenshots/[^/]+\.webp$' | wc -l | tr -d ' ')"
 
           if [[ "$png_count" != "54" ]]; then
             echo "Expected 54 portfolio screenshots, found $png_count"
@@ -41,6 +43,7 @@ jobs:
           done
 
           unzip -o "$archive" -d .
+          find projects -mindepth 2 -maxdepth 2 -name README.md -print0 | xargs -0 sed -i -E 's#(screenshots/[^)]+)\.png\)#\1.webp)#g'
           rm -rf imports/portfolio-assets
 
       - name: Commit restored screenshots
