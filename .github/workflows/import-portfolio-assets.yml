@@ -22,17 +22,17 @@ jobs:
         run: |
           set -euo pipefail
 
-          archive="imports/portfolio-assets/portfolio-assets.zip"
+          archive="imports/portfolio-assets/portfolio-assets-webp.zip"
 
           if [[ ! -f "$archive" ]]; then
             echo "Expected $archive"
             exit 1
           fi
 
-          png_count="$(unzip -Z1 "$archive" | grep -E '^projects/[0-9]{2}-[^/]+/screenshots/[^/]+\.png$' | wc -l | tr -d ' ')"
+          webp_count="$(unzip -Z1 "$archive" | grep -E '^projects/[0-9]{2}-[^/]+/screenshots/[^/]+\.webp$' | wc -l | tr -d ' ')"
 
-          if [[ "$png_count" != "54" ]]; then
-            echo "Expected 54 portfolio screenshots, found $png_count"
+          if [[ "$webp_count" != "54" ]]; then
+            echo "Expected 54 portfolio screenshots, found $webp_count"
             exit 1
           fi
 
@@ -41,6 +41,12 @@ jobs:
           done
 
           unzip -o "$archive" -d .
+
+          # The imported evidence is WebP for a much smaller Git footprint while
+          # keeping the original screenshot names and investigation structure.
+          find projects -mindepth 2 -maxdepth 2 -name README.md -print0 |
+            xargs -0 sed -i -E 's#(screenshots/[^)]+)\.png\)#\1.webp)#g'
+
           rm -rf imports/portfolio-assets
 
       - name: Commit restored screenshots
@@ -56,5 +62,5 @@ jobs:
             exit 0
           fi
 
-          git commit -m "Restore original portfolio screenshots [skip ci]"
+          git commit -m "Restore portfolio investigation screenshots [skip ci]"
           git push
